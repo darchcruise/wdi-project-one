@@ -1,0 +1,23 @@
+<h1>Proforma</h1>
+
+<p><%= @name %></p>
+<p><%= @address %></p>
+<p><%= @state %></p>
+<br/>
+
+<h4>Year 1</h4> <br/>
+Total Revenue: <%= @total_revenue %> <!--how do i format, ie dollar sign?-->
+<br/>
+Total Operating Expenses: <%= @total_opex %>
+<br/>
+Net Operating Income: <%= @noi %>
+
+<h4>Year 2</h4> <br/>
+Total Revenue: <%= @total_rev_year2 %>
+<br/>
+Total Operating Expenses: <%= @total_opex_year2 %>
+<br/>
+Net Operating Income: <%= @noi_year2 %><br/>
+
+<h4>Investment Analysis</h4>
+Net Present Value: <%= @npv %>
