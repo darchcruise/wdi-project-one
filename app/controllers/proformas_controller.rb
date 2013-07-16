@@ -4,6 +4,33 @@ class ProformasController < ApplicationController
   end
 
   def create
+    input = Proforma.new
+    input.name = params[:name]
+    input.address = params[:address]
+    input.state = params[:state]
+    input.sqft = params[:sqft]
+    input.units = params[:units]
+    # input.p = params[:purchase_price]
+    # input.sale = params[:sale_price]
+    # input.rev_growth = params[:rev_growth]
+    # input.opex_growth = params[:opex_growth]
+    # input.vacancy = params[:vacancy]
+    # input.r = params[:discount_rate]
+    input.save
+
+    input = Revenue.new
+    input.rent = params[:rent]
+    input.parking = params[:parking]
+
+t.float
+    t.float
+    t.float    :storage
+    t.float    :pet
+    t.float    :laundry
+    t.float    :vending
+    t.integer  :proforma_id
+
+
     redirect_to '/proformas/:id'
   end
 

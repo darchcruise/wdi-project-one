@@ -39,8 +39,12 @@ ActiveRecord::Schema.define(:version => 20130715223857) do
   end
 
   create_table "revenues", :force => true do |t|
-    t.float    "income"
-    t.string   "typ"
+    t.float    "rent"
+    t.float    "parking"
+    t.float    "storage"
+    t.float    "pet"
+    t.float    "laundry"
+    t.float    "vending"
     t.integer  "proforma_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
