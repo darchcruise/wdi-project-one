@@ -21,15 +21,23 @@ class ProformasController < ApplicationController
     input = Revenue.new
     input.rent = params[:rent]
     input.parking = params[:parking]
+    input.storage = params[:storage]
+    input.pet = params[:pet]
+    input.laundry = params[:laundry]
+    input.vending = params[:vending]
+    input.save
 
-t.float
-    t.float
-    t.float    :storage
-    t.float    :pet
-    t.float    :laundry
-    t.float    :vending
-    t.integer  :proforma_id
-
+    input = OperatingExpense.new
+    input.mf = params[:management_fees]
+    input.af = params[:administrative_fees]
+    input.pb = params[:payroll_and_benefits]
+    input.maint = params[:maintenance]
+    input.maint = params[:utilities]
+    input.maint = params[:maintenance]
+    input.maint = params[:real_estate_taxes]
+    input.maint = params[:miscellaneous]
+    input.maint = params[:proforma_id]
+    input.save
 
     redirect_to '/proformas/:id'
   end
