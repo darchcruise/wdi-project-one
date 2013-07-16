@@ -4,7 +4,7 @@ class ProformasController < ApplicationController
   end
 
   def create
-    #post
+    redirect_to '/proformas/:id'
   end
 
 
