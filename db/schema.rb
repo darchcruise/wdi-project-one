@@ -23,8 +23,19 @@ ActiveRecord::Schema.define(:version => 20130715223857) do
 
   create_table "proformas", :force => true do |t|
     t.integer  "users_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "name"
+    t.string   "address"
+    t.string   "state"
+    t.integer  "sqft"
+    t.integer  "units"
+    t.integer  "purchase_price"
+    t.integer  "sale_price"
+    t.float    "rev_growth"
+    t.float    "opex_growth"
+    t.float    "vacancy"
+    t.float    "discount_rate"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "revenues", :force => true do |t|

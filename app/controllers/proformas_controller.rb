@@ -49,8 +49,12 @@ class ProformasController < ApplicationController
 
     #r = params[:discount_rate]
     #discount_rate
-    r = 0.07
-   @npv = -8000 + @noi/(1+r)**1 + @noi_year2/(1+r)**2
+
+    r = params[:discount_rate].to_f
+    #r = 0.07
+    p = params[:purchase_price].to_f
+
+   @npv = -p + @noi/(1+r)**1 + @noi_year2/(1+r)**2
 
    if @npv < 0
     puts "This is a bad investment"
