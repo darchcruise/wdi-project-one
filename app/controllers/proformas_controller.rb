@@ -40,10 +40,11 @@ class ProformasController < ApplicationController
    @total_opex_year2 = @total_opex * (1 + opex_growth)
    @noi_year2 = @total_rev_year2 - @total_opex_year2
 
-   # r =
-   # #@-purchase_price = params[:purchase_price]
-   # #neg purchase price
-   # -800,000 + @noi/(1+r)**1 + @noi/(1+r)**2
+   @total_rev_year3 = @total_rev_year2 * (1 + rev_growth)
+   @total_opex_year3 = @total_opex_year2 * (1 + opex_growth)
+   @noi_year3 = @total_rev_year3 - @total_opex_year3
+
+
    # @sale_price = params[:sale_price]
    # irr =
 
@@ -54,7 +55,10 @@ class ProformasController < ApplicationController
     #r = 0.07
     p = params[:purchase_price].to_f
 
-   @npv = -p + @noi/(1+r)**1 + @noi_year2/(1+r)**2
+    sale = params[:sale_price].to_f
+
+
+   @npv = -p + @noi/(1+r)**1 + @noi_year2/(1+r)**2 + (@noi_year3+sale)/(1+r)**3
 
    if @npv < 0
     puts "This is a bad investment"

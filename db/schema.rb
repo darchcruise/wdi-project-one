@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(:version => 20130715223857) do
   create_table "operating_expenses", :force => true do |t|
     t.float    "cost"
     t.string   "typ"
-    t.integer  "year_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "proforma_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "proformas", :force => true do |t|
@@ -41,22 +41,15 @@ ActiveRecord::Schema.define(:version => 20130715223857) do
   create_table "revenues", :force => true do |t|
     t.float    "income"
     t.string   "typ"
-    t.integer  "year_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "proforma_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "users", :force => true do |t|
     t.string   "name"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "years", :force => true do |t|
-    t.integer  "proforma_id"
-    t.integer  "year"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
   end
 
 end

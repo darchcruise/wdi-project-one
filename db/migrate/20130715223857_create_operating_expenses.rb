@@ -3,7 +3,7 @@ class CreateOperatingExpenses < ActiveRecord::Migration
     create_table :operating_expenses do |t|
       t.float    :cost
       t.string   :typ
-      t.integer  :year_id
+      t.integer  :proforma_id
       t.timestamps
       end
   end

@@ -1,3 +1,3 @@
 class OperatingExpense < ActiveRecord::Base
-  belongs_to :years
+  belongs_to :proformas
 end
