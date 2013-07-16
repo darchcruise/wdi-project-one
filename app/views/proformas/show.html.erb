@@ -28,3 +28,7 @@ Net Operating Income: <%= @noi_year3 %><br/>
 
 <h4>Investment Analysis</h4>
 Net Present Value: <%= @npv %>
+
+<% @p.each do |row| %>
+<%= row.name %>
+<% end %>

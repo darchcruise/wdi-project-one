@@ -14,11 +14,17 @@
 ActiveRecord::Schema.define(:version => 20130715223857) do
 
   create_table "operating_expenses", :force => true do |t|
-    t.float    "cost"
-    t.string   "typ"
+    t.float    "management_fees"
+    t.float    "administrative_fees"
+    t.float    "payroll_and_benefits"
+    t.float    "maintenance"
+    t.float    "utilities"
+    t.float    "insurance"
+    t.float    "real_estate_taxes"
+    t.float    "miscellaneous"
     t.integer  "proforma_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
   end
 
   create_table "proformas", :force => true do |t|

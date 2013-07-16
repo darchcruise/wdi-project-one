@@ -2,7 +2,7 @@ class Proforma < ActiveRecord::Base
   # Relationships
   belongs_to :users
   has_many :revenues
-  has_many :operating_expenses
+  has_many :opexs
 
   # Validations
   validates_presence_of :discount_rate

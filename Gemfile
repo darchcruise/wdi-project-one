@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'zillow_ruby'
+gem 'finance'
+gem 'google_map'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:
