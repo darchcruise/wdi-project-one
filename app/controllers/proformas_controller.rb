@@ -1,51 +1,37 @@
 class ProformasController < ApplicationController
+
+  def index
+    @p = Proforma.all
+  end
+
+
   def new # displays p page
-      #dashboard
+      @proforma = Proforma.new
+      @revenue = Revenue.new
+      @operating_expense = Operating_Expense.new
   end
 
   def create # grabs info from p page and send to database via objects
-    p = Proforma.new
-    p.name = params[:name]
-    p.address = params[:address]
-    p.state = params[:state]
-    p.sqft = params[:sqft].to_i
-    p.units = params[:units].to_i
-    p.purchase_price = params[:purchase_price].to_i
-    p.sale_price = params[:sale_price].to_i
-    p.rev_growth = params[:rev_growth].to_f
-    p.opex_growth = params[:opex_growth].to_f
-    p.vacancy = params[:vacancy].to_f
-    p.discount_rate = params[:discount_rate].to_f
-    p.save
+    proforma = Proforma.new(params[:proforma])
+    revenue = Revenue.new(params[:revenue])
+    operating_expense = OperatingExpense.new(params[:operating_expense])
+    proforma.save
+    revenue.save
+    operating_expense.save
+    proforma.revenues << revenue
+    proforma.operating_expenses << operating_expense
 
-    r = Revenue.new
-    r.rent = params[:rent].to_f
-    r.parking = params[:parking].to_f
-    r.storage = params[:storage].to_f
-    r.pet = params[:pet].to_f
-    r.laundry = params[:laundry].to_f
-    r.vending = params[:vending].to_f
-    r.save
-
-    e = Operating_Expense.new
-    e.management_fees = params[:management_fees].to_f
-    e.administrative_fees = params[:administrative_fees].to_f
-    e.payroll_and_benefits = params[:payroll_and_benefits].to_f
-    e.maintenance = params[:maintenance].to_f
-    e.utilities = params[:utilities].to_f
-    e.real_estate_taxes = params[:real_estate_taxes].to_f
-    e.miscellaneous = params[:miscellaneous].to_f
-    e.proforma_id = params[:proforma_id].to_f
-    e.save
-
-
-    redirect_to '/proformas/:id' #show page
+    redirect_to proforma #show page
   end
 
 
   def show
-    # @p = Proforma.find(params[:id])
-    @p = Proforma.all
+    @p = Proforma.find(params[:id])
+    @r = @p.revenues
+    @e = @p.operating_expenses
+    # @total_revenue = @r.rent + @r.parking + @r.storage + @r.pet + @r.laundry + @r.vending
+
+
 
 
 

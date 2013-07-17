@@ -1,7 +1,7 @@
-class Operating_Expense < ActiveRecord::Base
+class OperatingExpense < ActiveRecord::Base
 
 # Relationships
-  belongs_to :proformas
+  belongs_to :proforma
 
   # Validations
 

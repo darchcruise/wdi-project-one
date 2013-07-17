@@ -1,6 +1,6 @@
 class Revenue < ActiveRecord::Base
   # Relationships
-  belongs_to :proformas
+  belongs_to :proforma
 
   # Validations
 

@@ -1,6 +1,85 @@
 <h1>Dashboard</h1>
 
-<form action="/proformas" method="post">
+<!--Proforma-->
+<%= form_for @proforma do |p| %>
+  <%= p.label :name %> <br/>
+  <%= p.text_field :name %> <br/>
+
+  <%= p.label :address %> <br/>
+  <%= p.text_field :address %> <br/>
+
+  <%= p.label :state %> <br/>
+  <%= p.text_field :state %> <br/>
+
+  <%= p.label :sqft %> <br/>
+  <%= p.text_field :sqft %> <br/>
+
+  <%= p.label :units %> <br/>
+  <%= p.text_field :units %> <br/>
+
+  <%= p.label :purchase_price %> <br/>
+  <%= p.text_field :purchase_price %> <br/>
+
+  <%= p.label :sale_price %> <br/>
+  <%= p.text_field :sale_price %> <br/>
+
+<%= fields_for @revenue do |r| %>
+  <%= r.label :rent %> <br/>
+  <%= r.text_field :rent %> <br/>
+
+  <%= r.label :parking %> <br/>
+  <%= r.text_field :parking %> <br/>
+
+  <%= r.label :storage %> <br/>
+  <%= r.text_field :storage %> <br/>
+
+  <%= r.label :pet %> <br/>
+  <%= r.text_field :pet %> <br/>
+
+  <%= r.label :laundry %> <br/>
+  <%= r.text_field :laundry %> <br/>
+
+  <%= r.label :vending %> <br/>
+  <%= r.text_field :vending %> <br/>
+
+  <%= r.label :proforma_id %> <br/>
+  <%= r.text_field :proforma_id %> <br/>
+  <% end %>
+
+<%= fields_for @operating_expense do |e| %>
+  <%= e.label :management_fees %> <br/>
+  <%= e.text_field :management_fees %> <br/>
+
+  <%= e.label :administrative_fees %> <br/>
+  <%= e.text_field :administrative_fees %> <br/>
+
+  <%= e.label :payroll_and_benefits %> <br/>
+  <%= e.text_field :payroll_and_benefits %> <br/>
+
+  <%= e.label :maintenance %> <br/>
+  <%= e.text_field :maintenance %> <br/>
+
+  <%= e.label :utilities %> <br/>
+  <%= e.text_field :utilities %> <br/>
+
+  <%= e.label :real_estate_taxes %> <br/>
+  <%= e.text_field :real_estate_taxes %> <br/>
+
+  <%= e.label :miscellaneous %> <br/>
+  <%= e.text_field :miscellaneous %> <br/>
+
+  <%= e.label :proforma_id %> <br/>
+  <%= e.text_field :proforma_id %> <br/>
+  <% end %>
+
+
+<%= p.submit "Submit" %>
+<% end %>
+
+
+
+
+<!-- <form action="/proformas" method="post">
 
   <h3>Property Information</h3>
    Name <input type="text" name="name"><br/>
@@ -41,4 +120,4 @@
 <br/>
   <button>Submit</button>
 
-</form>
+</form> -->
