@@ -90,6 +90,7 @@ GEM
     mime-types (1.23)
     multi_json (1.7.7)
     multi_xml (0.5.4)
+    pg (0.15.1)
     polyglot (0.3.3)
     pry (0.9.12.2)
       coderay (~> 1.0.5)
@@ -175,6 +176,7 @@ DEPENDENCIES
   finance
   jquery-rails
   meta_request
+  pg
   pry-debugger
   pry-rails
   pry-stack_explorer
