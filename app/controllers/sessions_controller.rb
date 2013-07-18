@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:screenname], params[:password])
     if user
       session[:user_id] = user.id
-      redirect_to root_url, notice: "Logged in!"
+      redirect_to new_proforma_path, notice: "Logged in!"
     else
       flash.now.alert = "Invalid screenname or password"
       render "new"
