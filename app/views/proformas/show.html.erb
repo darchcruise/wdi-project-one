@@ -1,42 +1,56 @@
-<h1>Proforma</h1>
 
-<%= @p.name %><br/>
-<%= @p.address %><br/>
-<%= @p.state %><br/>
+<div class="container-fluid">
+  <h1>Proforma</h1>
 
+  <%= @p.name %><br/>
+  <%= @p.address %><br/>
+  <%= @p.state %><br/>
 
+  <h4>Year 1</h4>
 
-<h4>Year 1</h4>
+  <h5>Revenues</h5>
+  <div class="row">
 
-<h5>Revenues</h5>
-<% @r.each do |revenue| %>
-Rent: <%= revenue.rent %><br/>
-Parking: <%= revenue.parking %><br/>
-Storage: <%= revenue.storage %><br/>
-Pet: <%= revenue.pet %><br/>
-Laundry: <%= revenue.laundry %><br/>
-Vending: <%= revenue.vending %><br/>
-<% end %>
-Total Revenue: <%= @total_revenue %><br/>
-
-<h5>Operating Expenses</h5>
-<% @e.each do |operating_expenses| %>
-Management Fees: <%= operating_expenses.management_fees %><br/>
-Administrative Fees: <%= operating_expenses.administrative_fees %><br/>
-Payroll and Benefits: <%= operating_expenses.payroll_and_benefits %><br/>
-Maintenance: <%= operating_expenses.maintenance %><br/>
-Utilities: <%= operating_expenses.utilities %><br/>
-Real Estate Taxes: <%= operating_expenses.real_estate_taxes %><br/>
-Miscellaneous: <%= operating_expenses.miscellaneous %><br/>
-<% end %>
-Total Operating Expenses: <%= @total_opex %><br/>
-
-<h5>Net Operating Income</h5>
-Net Operating Income: <%= @noi %><br/>
-
-
-<h5>30 Year Mortgage</h5>
-<%= ZillowRuby.thirty_year_fixed%>
+    <% 10.times do |year| %>
+      <div class="span2">
+        <h5>Year <%= year + 1 %></h5>
+        Rent: <%= number_to_currency(@base_rev.rent * ((1 + @p.rev_growth)**year)) %><br/>
+        Parking: <%= number_to_currency(@base_rev.parking * (1 + @p.rev_growth)**year)%><br/>
+        Storage: <%= number_to_currency(@base_rev.storage * (1 + @p.rev_growth)**year)%><br/>
+        Pet: <%= number_to_currency(@base_rev.pet * (1 + @p.rev_growth)**year)%><br/>
+        Laundry: <%= number_to_currency(@base_rev.laundry * (1 + @p.rev_growth)**year)%><br/>
+        Vending: <%= number_to_currency(@base_rev.vending * (1 + @p.rev_growth)**year)%><br/>
+      </div>
+    <% end %>
 
 
 
+
+  </div>
+  Total Revenue: <%= @total_revenue %><br/>
+    <h5>Operating Expenses</h5>
+    <% @e.each do |operating_expenses| %>
+    Management Fees: <%= operating_expenses.management_fees %><br/>
+    Administrative Fees: <%= operating_expenses.administrative_fees %><br/>
+    Payroll and Benefits: <%= operating_expenses.payroll_and_benefits %><br/>
+    Maintenance: <%= operating_expenses.maintenance %><br/>
+    Utilities: <%= operating_expenses.utilities %><br/>
+    Real Estate Taxes: <%= operating_expenses.real_estate_taxes %><br/>
+    Miscellaneous: <%= operating_expenses.miscellaneous %><br/>
+    <% end %>
+    Total Operating Expenses: <%= @total_opex %><br/>
+
+    <h5>Net Operating Income</h5>
+    Net Operating Income: <%= @noi %><br/>
+
+
+
+  <h4>Year 2</h4>
+
+  <h4>Year 3</h4>
+
+  <h5>30 Year Mortgage</h5>
+  <%= ZillowRuby.thirty_year_fixed%>
+
+
+</div>

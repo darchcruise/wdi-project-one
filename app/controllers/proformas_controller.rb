@@ -28,6 +28,7 @@ class ProformasController < ApplicationController
   def show
     @p = Proforma.find(params[:id])
     @r = @p.revenues # array
+    @base_rev = @p.revenues.first
     @e = @p.operating_expenses
 
     # @total_revenue = @r.rent + @r.parking + @r.storage + @r.pet + @r.laundry + @r.vending
@@ -41,7 +42,7 @@ class ProformasController < ApplicationController
 
 
     # @total_opex = management_fees + administrative_fees + payroll + maintenance + utilities + insurance + re_taxes + miscellaneous
-     @total_opex = 0
+    @total_opex = 0
     @e.each do |opex|
       if opex.management_fees == nil
       else
