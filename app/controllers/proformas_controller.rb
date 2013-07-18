@@ -30,6 +30,7 @@ class ProformasController < ApplicationController
     @r = @p.revenues # array
     @base_rev = @p.revenues.first
     @e = @p.operating_expenses
+    @base_opex = @p.operating_expenses.first
 
     # @total_revenue = @r.rent + @r.parking + @r.storage + @r.pet + @r.laundry + @r.vending
     @total_revenue = 0
