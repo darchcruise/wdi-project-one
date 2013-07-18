@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+  gem 'zillow_ruby'
+  gem 'finance'
+  gem 'bcrypt-ruby', require: 'bcrypt'
+  gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
+  gem 'rails', '3.2.13'
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+  gem 'jquery-rails'
+  gem 'uglifier', '>= 1.0.3'
 
 group :production do
   gem 'pg'
@@ -7,15 +16,7 @@ end
 
 group :development do
       gem 'sqlite3'
-      gem 'zillow_ruby'
-      gem 'finance'
-      gem 'bcrypt-ruby', require: 'bcrypt'
-      gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
-      gem 'rails', '3.2.13'
-      gem 'sass-rails',   '~> 3.2.3'
-      gem 'coffee-rails', '~> 3.2.1'
-      gem 'jquery-rails'
-      gem 'uglifier', '>= 1.0.3'
+
       gem 'pry-rails'           # Causes rails console to open pry
                       # https://github.com/rweng/pry-rails
       gem 'pry-debugger'        # Adds step, next, finish, and continue commands and breakpoints
