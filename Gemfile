@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'zillow_ruby'
 gem 'finance'
 
+gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'validates_email_format_of', :git => 'git://github.com/alexdunae/validates_email_format_of.git'
+
 gem 'rails', '3.2.13'
 
 # Bundle edge Rails instead:

@@ -8,7 +8,7 @@ class ProformasController < ApplicationController
   def new # displays p page
       @proforma = Proforma.new
       @revenue = Revenue.new
-      @operating_expense = Operating_Expense.new
+      @operating_expense = OperatingExpense.new
   end
 
   def create # grabs info from p page and send to database via objects
@@ -27,9 +27,68 @@ class ProformasController < ApplicationController
 
   def show
     @p = Proforma.find(params[:id])
-    @r = @p.revenues
+    @r = @p.revenues # array
     @e = @p.operating_expenses
+
     # @total_revenue = @r.rent + @r.parking + @r.storage + @r.pet + @r.laundry + @r.vending
+    @total_revenue = 0
+    @r.each do |revenue|
+      if revenue.rent == nil
+      else
+      @total_revenue += (revenue.rent + revenue.parking + revenue.parking + revenue.storage + revenue.pet + revenue.laundry + revenue.vending)
+      end
+    end
+
+
+    # @total_opex = management_fees + administrative_fees + payroll + maintenance + utilities + insurance + re_taxes + miscellaneous
+     @total_opex = 0
+    @e.each do |opex|
+      if opex.management_fees == nil
+      else
+      @total_opex += (opex.management_fees + opex.administrative_fees + opex.payroll + opex.maintenance + opex.utilities + opex.insurance + opex.re_taxes + opex.miscellaneous)
+      end
+    end
+
+    @noi = @total_revenue - @total_opex
+
+
+    @total_rev_year2 = @total_revenue * (1 + @p.rev_growth)
+    @total_opex_year2 = @total_opex * (1 + @p.opex_growth)
+    @noi_year2 = @total_rev_year2 - @total_opex_year2
+
+    @total_rev_year3 = @total_rev_year2 * (1 + @p.rev_growth)
+    @total_opex_year3 = @total_opex_year2 * (1 + @p.opex_growth)
+    @noi_year3 = @total_rev_year3 - @total_opex_year3
+
+    @total_rev_year4 = @total_rev_year3 * (1 + @p.rev_growth)
+    @total_opex_year4 = @total_opex_year3 * (1 + @p.opex_growth)
+    @noi_year4 = @total_rev_year4 - @total_opex_year4
+
+    @total_rev_year5 = @total_rev_year4 * (1 + @p.rev_growth)
+    @total_opex_year5 = @total_opex_year4 * (1 + @p.opex_growth)
+    @noi_year5 = @total_rev_year5 - @total_opex_year5
+
+    @total_rev_year6 = @total_rev_year5 * (1 + @p.rev_growth)
+    @total_opex_year6 = @total_opex_year5 * (1 + @p.opex_growth)
+    @noi_year6 = @total_rev_year6 - @total_opex_year6
+
+    @total_rev_year7 = @total_rev_year6 * (1 + @p.rev_growth)
+    @total_opex_year7 = @total_opex_year6 * (1 + @p.opex_growth)
+    @noi_year7 = @total_rev_year7 - @total_opex_year7
+
+    @total_rev_year8 = @total_rev_year7 * (1 + @p.rev_growth)
+    @total_opex_year8 = @total_opex_year7 * (1 + @p.opex_growth)
+    @noi_year8 = @total_rev_year8 - @total_opex_year8
+
+    @total_rev_year9 = @total_rev_year8 * (1 + @p.rev_growth)
+    @total_opex_year9 = @total_opex_year8 * (1 + @p.opex_growth)
+    @noi_year9 = @total_rev_year9 - @total_opex_year9
+
+    @total_rev_year10 = @total_rev_year9 * (1 + @p.rev_growth)
+    @total_opex_year10 = @total_opex_year9 * (1 + @p.opex_growth)
+    @noi_year10 = @total_rev_year10 - @total_opex_year10
+
+
 
 
 

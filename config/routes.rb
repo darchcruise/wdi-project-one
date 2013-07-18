@@ -2,6 +2,12 @@ WdiJasonFirstproject::Application.routes.draw do
 
 root to: 'login#index'
 resources :proformas
+resources :users
+resources :sessions
+
+get "log_in" => "sessions#new", as: "log_in"
+get "sign_up" => "users#new", as: "sign_up"
+get "log_out" => "sessions#destroy", as: "log_out"
 
 # root        /                             login#index
 #     proformas GET    /proformas(.:format)          proformas#index
@@ -10,8 +16,24 @@ resources :proformas
 # edit_proforma GET    /proformas/:id/edit(.:format) proformas#edit
 #      proforma GET    /proformas/:id(.:format)      proformas#show
 #               PUT    /proformas/:id(.:format)      proformas#update
-
-  # The priority is based upon order of creation:
+#               DELETE /proformas/:id(.:format)      proformas#destroy
+#         users GET    /users(.:format)              users#index
+#               POST   /users(.:format)              users#create
+#      new_user GET    /users/new(.:format)          users#new
+#     edit_user GET    /users/:id/edit(.:format)     users#edit
+#          user GET    /users/:id(.:format)          users#show
+#               PUT    /users/:id(.:format)          users#update
+#               DELETE /users/:id(.:format)          users#destroy
+#      sessions GET    /sessions(.:format)           sessions#index
+#               POST   /sessions(.:format)           sessions#create
+#   new_session GET    /sessions/new(.:format)       sessions#new
+#  edit_session GET    /sessions/:id/edit(.:format)  sessions#edit
+#       session GET    /sessions/:id(.:format)       sessions#show
+#               PUT    /sessions/:id(.:format)       sessions#update
+#               DELETE /sessions/:id(.:format)       sessions#destroy
+#        log_in GET    /log_in(.:format)             sessions#new
+#       sign_up GET    /sign_up(.:format)            users#new
+#       log_out GET    /log_out(.:format)            sessions#destroy# The priority is based upon order of creation:
   # first created -> highest priority.
 
   # Sample of regular route:

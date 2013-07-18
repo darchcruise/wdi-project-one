@@ -23,6 +23,18 @@
   <%= p.label :sale_price %> <br/>
   <%= p.text_field :sale_price %> <br/>
 
+  <%= p.label :rev_growth %> <br/>
+  <%= p.text_field :rev_growth %> <br/>
+
+  <%= p.label :opex_growth %> <br/>
+  <%= p.text_field :opex_growth %> <br/>
+
+  <%= p.label :vacancy %> <br/>
+  <%= p.text_field :vacancy %> <br/>
+
+  <%= p.label :discount_rate %> <br/>
+  <%= p.text_field :discount_rate %> <br/>
+
 <%= fields_for @revenue do |r| %>
   <%= r.label :rent %> <br/>
   <%= r.text_field :rent %> <br/>
@@ -42,8 +54,6 @@
   <%= r.label :vending %> <br/>
   <%= r.text_field :vending %> <br/>
 
-  <%= r.label :proforma_id %> <br/>
-  <%= r.text_field :proforma_id %> <br/>
   <% end %>
 
 <%= fields_for @operating_expense do |e| %>
