@@ -35,7 +35,7 @@ class ProformasController < ApplicationController
     @r.each do |revenue|
       if revenue.rent == nil
       else
-      @total_revenue += (revenue.rent + revenue.parking + revenue.parking + revenue.storage + revenue.pet + revenue.laundry + revenue.vending)
+      @total_revenue += (revenue.rent + revenue.parking + revenue.storage + revenue.pet + revenue.laundry + revenue.vending)
       end
     end
 
@@ -45,7 +45,7 @@ class ProformasController < ApplicationController
     @e.each do |opex|
       if opex.management_fees == nil
       else
-      @total_opex += (opex.management_fees + opex.administrative_fees + opex.payroll + opex.maintenance + opex.utilities + opex.insurance + opex.re_taxes + opex.miscellaneous)
+      @total_opex += (opex.management_fees + opex.administrative_fees + opex.payroll_and_benefits + opex.maintenance + opex.utilities + opex.insurance + opex.real_estate_taxes + opex.miscellaneous)
       end
     end
 

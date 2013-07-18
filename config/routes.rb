@@ -1,6 +1,6 @@
 WdiJasonFirstproject::Application.routes.draw do
 
-root to: 'login#index'
+root to: 'sessions#new'
 resources :proformas
 resources :users
 resources :sessions

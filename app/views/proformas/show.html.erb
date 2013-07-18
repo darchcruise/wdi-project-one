@@ -2,11 +2,41 @@
 
 <%= @p.name %><br/>
 <%= @p.address %><br/>
+<%= @p.state %><br/>
+
+
+
+<h4>Year 1</h4>
+
+<h5>Revenues</h5>
 <% @r.each do |revenue| %>
 Rent: <%= revenue.rent %><br/>
 Parking: <%= revenue.parking %><br/>
+Storage: <%= revenue.storage %><br/>
+Pet: <%= revenue.pet %><br/>
+Laundry: <%= revenue.laundry %><br/>
+Vending: <%= revenue.vending %><br/>
 <% end %>
+Total Revenue: <%= @total_revenue %><br/>
 
-<% @total_revenue %>
+<h5>Operating Expenses</h5>
+<% @e.each do |operating_expenses| %>
+Management Fees: <%= operating_expenses.management_fees %><br/>
+Administrative Fees: <%= operating_expenses.administrative_fees %><br/>
+Payroll and Benefits: <%= operating_expenses.payroll_and_benefits %><br/>
+Maintenance: <%= operating_expenses.maintenance %><br/>
+Utilities: <%= operating_expenses.utilities %><br/>
+Real Estate Taxes: <%= operating_expenses.real_estate_taxes %><br/>
+Miscellaneous: <%= operating_expenses.miscellaneous %><br/>
+<% end %>
+Total Operating Expenses: <%= @total_opex %><br/>
+
+<h5>Net Operating Income</h5>
+Net Operating Income: <%= @noi %><br/>
+
+
+<h5>30 Year Mortgage</h5>
+<%= ZillowRuby.thirty_year_fixed%>
+
 
 

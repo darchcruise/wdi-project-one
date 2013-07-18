@@ -1,0 +1,16 @@
+<h1>Login Page</h1>
+
+<%= form_tag sessions_path do %> <!--by deefault goes to post-->
+  <p>
+    <%= label_tag :screenname %><br/>
+    <%= text_field_tag :screenname, params[:screenname] %>
+  </p>
+  <p>
+    <%= label_tag :password %><br/>
+    <%= password_field_tag :password %>
+  </p>
+  <p class="button"><%= submit_tag value = "Log in"%></p>
+  <p><a href="/sign_up">Sign up</a></p>
+
+
+<% end %>

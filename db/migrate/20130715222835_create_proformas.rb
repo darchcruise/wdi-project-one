@@ -2,9 +2,9 @@ class CreateProformas < ActiveRecord::Migration
   def up
     create_table :proformas do |t|
       t.integer :users_id
-      t.string :name
-      t.string :address
-      t.string :state
+      t.string :name, default: 'John Doe'
+      t.string :address, default: '600 Lexington Ave'
+      t.string :state, default: 'New York'
       t.integer :sqft, default: 20000
       t.integer :units, default: 100
       t.integer :purchase_price, default: 100000
