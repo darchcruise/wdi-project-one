@@ -1,11 +1,11 @@
 class ProformasController < ApplicationController
 
-  def index
+  def index #dispays all the proformas
     @p = Proforma.all
   end
 
 
-  def new # displays p page
+  def new # displays form (input) page
       @proforma = Proforma.new
       @revenue = Revenue.new
       @operating_expense = OperatingExpense.new
@@ -25,7 +25,7 @@ class ProformasController < ApplicationController
   end
 
 
-  def show
+  def show # displays proforma (output) page
     @p = Proforma.find(params[:id])
     @r = @p.revenues # array
     @base_rev = @p.revenues.first

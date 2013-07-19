@@ -1,5 +1,7 @@
 <h1>Dashboard</h1>
 
+<!--Allows me to collect info for multiple model/tables from one form-->
+
 <!--Proforma-->
 <%= form_for @proforma do |p| %>
   <%= p.label :name %> <br/>
@@ -35,6 +37,7 @@
   <%= p.label :discount_rate %> <br/>
   <%= p.text_field :discount_rate %> <br/>
 
+<!--Revenue-->
 <%= fields_for @revenue do |r| %>
   <%= r.label :rent %> <br/>
   <%= r.text_field :rent %> <br/>
@@ -56,6 +59,7 @@
 
   <% end %>
 
+<!--Operating Expenses-->
 <%= fields_for @operating_expense do |e| %>
   <%= e.label :management_fees %> <br/>
   <%= e.text_field :management_fees %> <br/>

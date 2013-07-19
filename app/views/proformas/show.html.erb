@@ -56,13 +56,13 @@
     <% 10.times do |year| %>
       <div class="span2">
         <h5>Year <%= year + 1 %></h5>
-         <%= number_to_currency(@base_opex.management_fees * ((1 + @p.rev_growth)**year)) %><br/>
-         <%= number_to_currency(@base_opex.administrative_fees * (1 + @p.rev_growth)**year)%><br/>
-         <%= number_to_currency(@base_opex.payroll_and_benefits * (1 + @p.rev_growth)**year)%><br/>
-         <%= number_to_currency(@base_opex.maintenance * (1 + @p.rev_growth)**year)%><br/>
-         <%= number_to_currency(@base_opex.utilities * (1 + @p.rev_growth)**year)%><br/>
-         <%= number_to_currency(@base_opex.real_estate_taxes * (1 + @p.rev_growth)**year)%><br/>
-         <%= number_to_currency(@base_opex.miscellaneous * (1 + @p.rev_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.management_fees * ((1 + @p.opex_growth)**year)) %><br/>
+         <%= number_to_currency(@base_opex.administrative_fees * (1 + @p.opex_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.payroll_and_benefits * (1 + @p.opex_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.maintenance * (1 + @p.opex_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.utilities * (1 + @p.opex_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.real_estate_taxes * (1 + @p.opex_growth)**year)%><br/>
+         <%= number_to_currency(@base_opex.miscellaneous * (1 + @p.opex_growth)**year)%><br/>
          <% total_opex = @base_opex.management_fees + @base_opex.administrative_fees + @base_opex.payroll_and_benefits + @base_opex.maintenance + @base_opex.utilities + @base_opex.real_estate_taxes + @base_opex.miscellaneous %>
 
          <%= number_to_currency(total_opex) %>
